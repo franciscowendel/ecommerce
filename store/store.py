@@ -12,5 +12,9 @@ def cadastrar_produto():
     pass
 
 
+def listar_produtos():
+    pass
+
+
 if __name__ == '__main__':
     menu()
