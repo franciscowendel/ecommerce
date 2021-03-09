@@ -6,3 +6,7 @@ class User:
         self.__nome: str = nome
         self.__email: str = email
         self.__senha: str = key.hash(senha, rounds=200000, salt_size=16)
+
+    @property
+    def nome(self) -> str:
+        return self.__nome
