@@ -24,5 +24,9 @@ def ver_carrinho():
     pass
 
 
+def fechar_pedido():
+    pass
+
+
 if __name__ == '__main__':
     menu()
