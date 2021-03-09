@@ -14,3 +14,9 @@ class Product:
     @property
     def codigo(self) -> int:
         return self.codigo
+
+    @property
+    def nome(self) -> str:
+        return self.nome
+
+
