@@ -77,7 +77,12 @@ def cadastrar_produto():
 
 
 def listar_produtos():
-    pass
+    if len(produtos) > 0:
+        pass
+    else:
+        print('NENHUM PRODUTO CADATRADO...')
+    sleep(1)
+    menu()
 
 
 def comprar_produto():
