@@ -4,6 +4,10 @@ from product import Product
 from userverify import User
 
 
+produtos: List[Product] = []
+carrinho: List[Dict[Product, int]] = []
+
+
 def menu():
     pass
 
@@ -30,6 +34,7 @@ def fechar_pedido():
 
 def rastrear_produto(numero):
     pass
+
 
 if __name__ == '__main__':
     menu()
