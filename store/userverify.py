@@ -10,3 +10,7 @@ class User:
     @property
     def nome(self) -> str:
         return self.__nome
+
+    @property
+    def email(self) -> str:
+        return self.__email
