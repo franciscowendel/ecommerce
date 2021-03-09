@@ -20,4 +20,6 @@ class User:
         return self.__senha
 
     def password_check(self, senha):
-        pass
+        if key.verify(senha, self.senha):
+            return True
+        return False
