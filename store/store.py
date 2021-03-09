@@ -20,5 +20,9 @@ def comprar_produto():
     pass
 
 
+def ver_carrinho():
+    pass
+
+
 if __name__ == '__main__':
     menu()
