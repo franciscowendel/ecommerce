@@ -3,7 +3,7 @@ from aux import float_to_str
 
 class Product:
 
-    contador: int = 0
+    contador: int = 1
 
     def __init__(self, nome: str, valor: float) -> None:
         self.__codigo = Product.contador
@@ -13,15 +13,15 @@ class Product:
 
     @property
     def codigo(self) -> int:
-        return self.codigo
+        return self.__codigo
 
     @property
     def nome(self) -> str:
-        return self.nome
+        return self.__nome
 
     @property
     def valor(self) -> float:
-        return self.valor
+        return self.__valor
 
     def __str__(self):
         return f'Código do produto: {self.codigo}\nNome do produto: {self.nome}\nValor do produto: {float_to_str(self.valor)}'  # noqa
