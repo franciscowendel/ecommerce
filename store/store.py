@@ -16,7 +16,13 @@ def menu():
         print()
         print('O QUE DESEJA: ')
         print()
-
+        print('1 - CADASTRAR PRODUTO: ')
+        print('2 - LISTAR PRODUTOS: ')
+        print('3 - COMPRAR PRODUTO: ')
+        print('4 - VER CARRINHO: ')
+        print('5 - FECHAR PEDIDO: ')
+        print('6 - SAIR: ')
+        print()
 
     except (ValueError, TypeError) as err:
         return f'Erro do tipo {err} encontrado...'
