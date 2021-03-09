@@ -14,6 +14,9 @@ def menu():
         print('---------------------------------------------- STORE --------------------------------------------------')
         print('-------------------------------------------------------------------------------------------------------')
         print()
+        print('O QUE DESEJA: ')
+        print()
+
 
     except (ValueError, TypeError) as err:
         return f'Erro do tipo {err} encontrado...'
