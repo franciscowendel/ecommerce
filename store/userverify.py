@@ -14,3 +14,7 @@ class User:
     @property
     def email(self) -> str:
         return self.__email
+
+    @property
+    def senha(self) -> str:
+        return self.__senha
