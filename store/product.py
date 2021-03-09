@@ -22,3 +22,6 @@ class Product:
     @property
     def valor(self) -> float:
         return self.valor
+
+    def __str__(self):
+        return f'Código do produto: {self.codigo}\nNome do produto: {self.nome}\nValor do produto: {float_to_str(self.valor)}'  # noqa
