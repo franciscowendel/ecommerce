@@ -24,6 +24,27 @@ def menu():
         print('6 - SAIR: ')
         print()
 
+        opcao: int = int(input())
+
+        if opcao == 1:
+            cadastrar_produto()
+        elif opcao == 2:
+            listar_produtos()
+        elif opcao == 3:
+            comprar_produto()
+        elif opcao == 4:
+            ver_carrinho()
+        elif opcao == 5:
+            fechar_pedido()
+        elif opcao == 6:
+            print('VOLTE SEMPRE!')
+            sleep(1)
+            exit(1)
+        else:
+            print('OPÇÃO INVÁLIDA...')
+            sleep(1)
+            menu()
+
     except (ValueError, TypeError) as err:
         return f'Erro do tipo {err} encontrado...'
 
