@@ -51,7 +51,11 @@ def menu():
 
 def cadastrar_produto():
     try:
-        pass
+        print('-------------------')
+        print('CADASTRAR PRODUTO: ')
+        print('-------------------')
+        print()
+
     except (ValueError, TypeError) as err:
         return f'Erro do tipo {err} encontrado...'
 
