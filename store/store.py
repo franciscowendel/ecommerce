@@ -50,7 +50,10 @@ def menu():
 
 
 def cadastrar_produto():
-    pass
+    try:
+        pass
+    except (ValueError, TypeError) as err:
+        return f'Erro do tipo {err} encontrado...'
 
 
 def listar_produtos():
