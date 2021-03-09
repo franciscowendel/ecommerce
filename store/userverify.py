@@ -18,3 +18,6 @@ class User:
     @property
     def senha(self) -> str:
         return self.__senha
+
+    def password_check(self, senha):
+        pass
