@@ -58,6 +58,17 @@ def cadastrar_produto():
         nome: str = input('NOME DO PRODUTO: ')
         valor: float = float(input('VALOR DO PRODUTO: '))
         print()
+        produto: Product = Product(nome, valor)
+
+        print('------------------')
+        print('DADOS DO PRODUTO: ')
+        print('------------------')
+        print(produto)
+        produtos.append(produto)
+        print('PRODUTO CADASTRADO COM SUCESSO!')
+        print()
+        sleep(1)
+        menu()
 
     except (ValueError, TypeError) as err:
         return f'Erro do tipo {err} encontrado...'
