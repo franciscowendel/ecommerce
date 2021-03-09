@@ -28,5 +28,8 @@ def fechar_pedido():
     pass
 
 
+def rastrear_produto(numero):
+    pass
+
 if __name__ == '__main__':
     menu()
