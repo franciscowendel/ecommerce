@@ -9,7 +9,10 @@ carrinho: List[Dict[Product, int]] = []
 
 
 def menu():
-    pass
+    try:
+        pass
+    except (ValueError, TypeError) as err:
+        return f'Erro do tipo {err} encontrado...'
 
 
 def cadastrar_produto():
