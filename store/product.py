@@ -3,7 +3,10 @@ from aux import float_to_str
 
 class Product:
 
-    codigo: int = 0
+    contador: int = 0
 
     def __init__(self, nome: str, valor: float) -> None:
-        pass
+        self.codigo = Product.contador
+        self.__nome: str = nome
+        self.__valor: float = valor
+        Product.contador += 1
