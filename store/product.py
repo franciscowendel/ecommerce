@@ -19,4 +19,6 @@ class Product:
     def nome(self) -> str:
         return self.nome
 
-
+    @property
+    def valor(self) -> float:
+        return self.valor
