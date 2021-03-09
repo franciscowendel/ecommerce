@@ -16,5 +16,9 @@ def listar_produtos():
     pass
 
 
+def comprar_produto():
+    pass
+
+
 if __name__ == '__main__':
     menu()
