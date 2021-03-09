@@ -6,7 +6,11 @@ class Product:
     contador: int = 0
 
     def __init__(self, nome: str, valor: float) -> None:
-        self.codigo = Product.contador
+        self.__codigo = Product.contador
         self.__nome: str = nome
         self.__valor: float = valor
         Product.contador += 1
+
+    @property
+    def codigo(self) -> int:
+        return self.codigo
