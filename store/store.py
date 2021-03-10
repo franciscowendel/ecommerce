@@ -108,6 +108,13 @@ def comprar_produto():
 
             produto: Product = rastrear_produto(numero)
 
+            if produto:
+                pass
+            else:
+                print(f'PRODUTO {produto.nome} COM CÓDIGO {numero} NÃO FOI ENCONTRADO.')
+            sleep(1)
+            menu()
+
         else:
             print('NENHUM PRODUTO CADASTRADO...')
         sleep(1)
