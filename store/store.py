@@ -158,7 +158,12 @@ def comprar_produto():
 
 
 def ver_carrinho():
-    pass
+    if len(carrinho) > 0:
+        pass
+    else:
+        print('CARRINHO VAZIO...')
+    sleep(1)
+    menu()
 
 
 def fechar_pedido():
