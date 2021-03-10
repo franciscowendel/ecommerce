@@ -170,6 +170,7 @@ def ver_carrinho():
                 print('-------------------')
                 print(dados[0])
                 print(f'Quantidade: {dados[1]}')
+                print('-------------------')
                 print()
 
     else:
