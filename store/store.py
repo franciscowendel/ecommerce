@@ -80,6 +80,7 @@ def cadastrar_produto():
 
 
 def listar_produtos():
+    """Lista os produtos cadastrados ma lista de produtos."""
     if len(produtos) > 0:
 
         print('-------------------')
