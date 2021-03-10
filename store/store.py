@@ -255,6 +255,7 @@ def fechar_pedido():
 
 
 def rastrear_produto(numero):
+    """Dá a possibilidade de pegarmos o produto pelo seu código."""
     x: Product = None  # noqa
 
     if len(produtos) > 0:
