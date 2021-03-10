@@ -100,6 +100,7 @@ def listar_produtos():
 
 
 def comprar_produto():
+    """Adiciona o produto (informando o seu código) no carrinho."""
     try:
         if len(produtos) > 0:
             print('-------------------------------------------')
