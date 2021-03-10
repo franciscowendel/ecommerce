@@ -104,12 +104,17 @@ def comprar_produto():
             print()
             for produto in produtos:
                 print(produto)
+                print()
+
             numero: int = int(input())
 
             produto: Product = rastrear_produto(numero)
 
             if produto:
-                pass
+                if len(carrinho) > 0:
+                    pass
+                else:
+                    pass
             else:
                 print(f'PRODUTO {produto.nome} COM CÓDIGO {numero} NÃO FOI ENCONTRADO.')
             sleep(1)
