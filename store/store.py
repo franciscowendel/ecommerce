@@ -98,7 +98,11 @@ def listar_produtos():
 def comprar_produto():
     try:
         if len(produtos) > 0:
-            pass
+            print('-------------------------------------------')
+            print('CÓDIGO DO PRODUTO QUE VOCÊ DESEJA COMPRAR: ')
+            print('-------------------------------------------')
+            print()
+
         else:
             print('NENHUM PRODUTO CADASTRADO...')
         sleep(1)
