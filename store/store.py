@@ -195,7 +195,13 @@ def fechar_pedido():
             confirma_senha: str = input('CONFIRME A SENHA: ')
             if confirma_senha == '':
                 exit(1)
+            print()
 
+            if senha == confirma_senha:
+                usuario: User = User(nome, email, senha)
+            else:
+                print('SENHA INCORRETA!')
+                exit(1)
 
             print('----------------------')
             print('PRODUTOS NO CARRINHO: ')
