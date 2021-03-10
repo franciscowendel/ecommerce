@@ -181,7 +181,23 @@ def ver_carrinho():
 def fechar_pedido():
     try:
         if len(carrinho) > 0:
-            pass
+            fatura: float = 0
+
+            nome: str = input('NOME: ')
+            if nome == '':
+                exit(1)
+
+
+
+
+
+
+            print('----------------------')
+            print('PRODUTOS NO CARRINHO: ')
+            print('----------------------')
+            print()
+
+
         else:
             print('CARRINHO VAZIO...')
         sleep(1)
