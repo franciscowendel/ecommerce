@@ -102,6 +102,9 @@ def comprar_produto():
             print('CÓDIGO DO PRODUTO QUE VOCÊ DESEJA COMPRAR: ')
             print('-------------------------------------------')
             print()
+            for produto in produtos:
+                print(produto)
+            numero: int = int(input())
 
         else:
             print('NENHUM PRODUTO CADASTRADO...')
