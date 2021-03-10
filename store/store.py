@@ -2,8 +2,7 @@ from typing import List, Dict
 from time import sleep
 from product import Product
 from userverify import User
-from datetime import datetime
-from datetime import timedelta
+import datetime
 
 produtos: List[Product] = []
 carrinho: List[Dict[Product, int]] = []
@@ -230,6 +229,14 @@ def fechar_pedido():
                     fatura += dados[0].valor * dados[1]
                     print('-------------------')
                     print()
+
+            data_compra = datetime.datetime.today()
+            vencimento = datetime.timedelta(days=3)
+            boleto = vencimento + data_compra
+            print(f'TOTAL DA FATURA: {fatura}')
+            print()
+            print(f'VENCIMENTO DO BOLETO: {boleto}')
+            print()
 
         else:
             print('CARRINHO VAZIO...')
