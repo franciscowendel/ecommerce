@@ -103,7 +103,9 @@ def comprar_produto():
             print('-------------------------------------------')
             print()
             for produto in produtos:
+                print('---------------------------')
                 print(produto)
+                print('---------------------------')
                 print()
 
             numero: int = int(input())
