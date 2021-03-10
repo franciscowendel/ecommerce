@@ -123,6 +123,7 @@ def comprar_produto():
                             exist: bool = True
                             print('-----------------------------------------------------------------------')
                             sleep(1)
+                            menu()
 
                     if not exist:
                         pass
