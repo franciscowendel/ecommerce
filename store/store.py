@@ -78,7 +78,17 @@ def cadastrar_produto():
 
 def listar_produtos():
     if len(produtos) > 0:
-        pass
+
+        print('-------------------')
+        print('LISTA DE PRODUTOS: ')
+        print('-------------------')
+        print()
+        for produto in produtos:
+            print(produto)
+            print('-------------------')
+            print()
+            sleep(1)
+
     else:
         print('NENHUM PRODUTO CADATRADO...')
     sleep(1)
