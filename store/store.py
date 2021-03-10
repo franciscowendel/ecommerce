@@ -186,11 +186,12 @@ def fechar_pedido():
             nome: str = input('NOME: ')
             if nome == '':
                 exit(1)
-
-
-
-
-
+            email: str = input('EMAIL: ')
+            if email == '':
+                exit(1)
+            senha: str = input('SENHA: ')
+            if senha == '':
+                exit(1)
 
             print('----------------------')
             print('PRODUTOS NO CARRINHO: ')
