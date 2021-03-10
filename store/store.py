@@ -163,6 +163,7 @@ def comprar_produto():
 
 
 def ver_carrinho():
+    """Lista os produtos no carrinho."""
     if len(carrinho) > 0:
 
         print('----------')
