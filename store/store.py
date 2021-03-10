@@ -123,7 +123,7 @@ def comprar_produto():
                             item[produto] = quant + 1
                             print(f'PRODUTO {produto.nome} AGORA POSSUI {quant + 1} UNIDADES NO CARRINHO.')
                             exist: bool = True
-                            print('-----------------------------------------------------------------------')
+                            print()
                             sleep(1)
                             menu()
 
@@ -139,11 +139,12 @@ def comprar_produto():
                     carrinho.append(item)
                     print(f'O PRODUTO {produto.nome} FOI ADICIONADO NO CARRINHO COM SUCESSO!')
                     print()
+                    sleep(1)
+                    menu()
 
             else:
                 print(f'PRODUTO COM CÓDIGO INFORMADO NÃO FOI ENCONTRADO.')
                 print()
-
             sleep(1)
             menu()
 
