@@ -179,7 +179,10 @@ def ver_carrinho():
 
 
 def fechar_pedido():
-    pass
+    try:
+        pass
+    except (ValueError, TypeError) as err:
+        return f'Erro do tipo {err} encontrado...'
 
 
 def rastrear_produto(numero):
