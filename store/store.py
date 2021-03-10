@@ -126,7 +126,11 @@ def comprar_produto():
                             menu()
 
                     if not exist:
-                        pass
+                        prod: Dict[Product, int] = {produto: 1}
+                        carrinho.append(prod)
+                        print(f'O PRODUTO {produto.nome} FOI ADICIONADO NO CARRINHO COM SUCESSO!')
+                        sleep(1)
+                        menu()
 
                 else:
                     item: Dict[Product, int] = {produto: 1}
