@@ -119,6 +119,10 @@ def comprar_produto():
 
                         if quant:
                             item[produto] = quant + 1
+                            print(f'PRODUTO {produto.nome} AGORA POSSUI {quant + 1} UNIDADES NO CARRINHO.')
+                            exist: bool = True
+                            print('-----------------------------------------------------------------------')
+                            sleep(1)
 
                 else:
                     item: Dict[Product, int] = {produto: 1}
