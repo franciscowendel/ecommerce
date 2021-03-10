@@ -106,6 +106,8 @@ def comprar_produto():
                 print(produto)
             numero: int = int(input())
 
+            produto: Product = rastrear_produto(numero)
+
         else:
             print('NENHUM PRODUTO CADASTRADO...')
         sleep(1)
@@ -124,7 +126,13 @@ def fechar_pedido():
 
 
 def rastrear_produto(numero):
-    pass
+    x: Product = None  # noqa
+
+    if len(produtos) > 0:
+        for produto in produtos:
+            if produto.codigo == numero:
+                x: Product = produto
+    return x
 
 
 if __name__ == '__main__':
