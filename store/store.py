@@ -192,6 +192,10 @@ def fechar_pedido():
             senha: str = input('SENHA: ')
             if senha == '':
                 exit(1)
+            confirma_senha: str = input('CONFIRME A SENHA: ')
+            if confirma_senha == '':
+                exit(1)
+
 
             print('----------------------')
             print('PRODUTOS NO CARRINHO: ')
