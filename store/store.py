@@ -180,7 +180,13 @@ def ver_carrinho():
 
 def fechar_pedido():
     try:
-        pass
+        if len(carrinho) > 0:
+            pass
+        else:
+            print('CARRINHO VAZIO...')
+        sleep(1)
+        menu()
+
     except (ValueError, TypeError) as err:
         return f'Erro do tipo {err} encontrado...'
 
