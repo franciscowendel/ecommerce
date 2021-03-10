@@ -203,6 +203,17 @@ def fechar_pedido():
                 print('SENHA INCORRETA!')
                 exit(1)
 
+            print('USUÁRIO CRIADO COM SUCESSO!')
+            print()
+
+            senha: str = input('DIGITE A SENHA NOVAMENTE: ')
+
+            if usuario.password_check(senha):  # noqa
+                print('ACESSO PERMITIDO!')
+            else:
+                print('ACESSO NEGADO, SENHA INCORRETA!')
+
+
             print('----------------------')
             print('PRODUTOS NO CARRINHO: ')
             print('----------------------')
