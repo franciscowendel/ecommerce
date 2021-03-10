@@ -124,10 +124,8 @@ def comprar_produto():
                             print('-----------------------------------------------------------------------')
                             sleep(1)
 
-                        else:
-                            print('PRODUTO NÃO EXISTE...')
-                        sleep(1)
-                        menu()
+                    if not exist:
+                        pass
 
                 else:
                     item: Dict[Product, int] = {produto: 1}
