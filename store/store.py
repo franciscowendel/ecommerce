@@ -3,6 +3,7 @@ from time import sleep
 from product import Product
 from userverify import User
 import datetime
+from aux import float_to_str
 
 produtos: List[Product] = []
 carrinho: List[Dict[Product, int]] = []
@@ -233,7 +234,7 @@ def fechar_pedido():
             data_compra = datetime.datetime.today()
             vencimento = datetime.timedelta(days=3)
             boleto = vencimento + data_compra
-            print(f'TOTAL DA FATURA: {fatura}')
+            print(f'TOTAL DA FATURA: {float_to_str(fatura)}')
             print()
             print(f'VENCIMENTO DO BOLETO: {boleto}')
             print()
