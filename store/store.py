@@ -2,7 +2,8 @@ from typing import List, Dict
 from time import sleep
 from product import Product
 from userverify import User
-
+from datetime import datetime
+from datetime import timedelta
 
 produtos: List[Product] = []
 carrinho: List[Dict[Product, int]] = []
@@ -213,12 +214,19 @@ def fechar_pedido():
             else:
                 print('ACESSO NEGADO, SENHA INCORRETA!')
 
+            print()
 
             print('----------------------')
             print('PRODUTOS NO CARRINHO: ')
             print('----------------------')
             print()
-
+            for item in carrinho:
+                for dados in item.items():
+                    print('------------------')
+                    print(dados)
+                    print(f'Quantidade: {dados[1]}')
+                    fatura += dados[0].valor * dados[1]
+                    print('-------------------')
 
         else:
             print('CARRINHO VAZIO...')
