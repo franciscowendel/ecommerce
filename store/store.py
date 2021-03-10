@@ -97,7 +97,13 @@ def listar_produtos():
 
 def comprar_produto():
     try:
-        pass
+        if len(produtos) > 0:
+            pass
+        else:
+            print('NENHUM PRODUTO CADASTRADO...')
+        sleep(1)
+        menu()
+
     except (ValueError, TypeError) as err:
         return f'Erro do tipo {err} encontrado...'
 
