@@ -186,6 +186,7 @@ def ver_carrinho():
 
 
 def fechar_pedido():
+    """Após informar os dados de usuário, o pedido é fechado, informando o total da fatura e o vencimento do boleto."""
     try:
         if len(carrinho) > 0:
             fatura: float = 0
