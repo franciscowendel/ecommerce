@@ -159,7 +159,18 @@ def comprar_produto():
 
 def ver_carrinho():
     if len(carrinho) > 0:
-        pass
+
+        print('----------')
+        print('CARRINHO: ')
+        print('----------')
+        print()
+        for item in carrinho:
+            for dados in item.items():
+                print('-------------------')
+                print(dados[0])
+                print(f'Quantidade: {dados[1]}')
+                print()
+
     else:
         print('CARRINHO VAZIO...')
     sleep(1)
