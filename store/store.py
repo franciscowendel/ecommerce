@@ -114,9 +114,14 @@ def comprar_produto():
                 if len(carrinho) > 0:
                     pass
                 else:
-                    pass
+                    item: Dict[Product, int] = {produto: 1}
+                    carrinho.append(item)
+                    print(f'O PRODUTO {produto.nome} FOI ADICIONADO NO CARRINHO COM SUCESSO!')
+                    print()
+
             else:
-                print(f'PRODUTO {produto.nome} COM CÓDIGO {numero} NÃO FOI ENCONTRADO.')
+                print(f'PRODUTO COM CÓDIGO INFORMADO NÃO FOI ENCONTRADO.')
+                print()
             sleep(1)
             menu()
 
