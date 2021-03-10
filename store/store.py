@@ -112,8 +112,13 @@ def comprar_produto():
 
             if produto:
                 if len(carrinho) > 0:
+                    exist: bool = False
+
                     for item in carrinho:
                         quant: int = item.get(produto)
+
+                        if quant:
+                            item[produto] = quant + 1
 
                 else:
                     item: Dict[Product, int] = {produto: 1}
