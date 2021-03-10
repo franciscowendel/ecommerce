@@ -173,6 +173,7 @@ def ver_carrinho():
 
     else:
         print('CARRINHO VAZIO...')
+        print()
     sleep(1)
     menu()
 
