@@ -208,6 +208,7 @@ def fechar_pedido():
             print()
 
             senha: str = input('DIGITE A SENHA NOVAMENTE: ')
+            print()
 
             if usuario.password_check(senha):  # noqa
                 print('ACESSO PERMITIDO!')
@@ -222,11 +223,12 @@ def fechar_pedido():
             print()
             for item in carrinho:
                 for dados in item.items():
-                    print('------------------')
-                    print(dados)
+                    print('-------------------')
+                    print(dados[0])
                     print(f'Quantidade: {dados[1]}')
                     fatura += dados[0].valor * dados[1]
                     print('-------------------')
+                    print()
 
         else:
             print('CARRINHO VAZIO...')
