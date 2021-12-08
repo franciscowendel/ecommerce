@@ -55,8 +55,8 @@ def menu():
             sleep(0.5)
             menu()
 
-    except (ValueError, TypeError) as err:
-        return f'Erro do tipo {err} encontrado...'
+    except (ValueError, TypeError, UnboundLocalError) as err:
+        return f'Erros do tipo {err} encontrados...'
 
 
 def cadastrar_produto():
@@ -83,8 +83,8 @@ def cadastrar_produto():
         sleep(1)
         menu()
 
-    except (ValueError, TypeError) as err:
-        return f'Erro do tipo {err} encontrado...'
+    except (ValueError, TypeError, UnboundLocalError) as err:
+        return f'Erros do tipo {err} encontrados...'
 
 
 def listar_produtos():
@@ -166,8 +166,8 @@ def comprar_produto():
         sleep(1)
         menu()
 
-    except (ValueError, TypeError) as err:
-        return f'Erro do tipo {err} encontrado...'
+    except (ValueError, TypeError, UnboundLocalError) as err:
+        return f'Erros do tipo {err} encontrados...'
 
 
 def ver_carrinho():
@@ -258,8 +258,8 @@ def fechar_pedido():
         sleep(1)
         menu()
 
-    except (ValueError, TypeError) as err:
-        return f'Erro do tipo {err} encontrado...'
+    except (ValueError, TypeError, UnboundLocalError) as err:
+        return f'Erros do tipo {err} encontrados...'
 
 
 def rastrear_produto(numero):
