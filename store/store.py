@@ -67,7 +67,19 @@ def cadastrar_produto():
         print('-------------------')
         print()
         nome: str = input('NOME DO PRODUTO: ')
-        valor: float = float(input('VALOR DO PRODUTO: '))
+        if nome == '' or nome.isnumeric():
+            print()
+            print('DIGITE O NOME DO PRODUTO!')
+            sleep(0.5)
+            menu()
+        valor = input('VALOR DO PRODUTO: ')
+        if valor == '':
+            print()
+            print('DIGITE O VALOR DO PRODUTO!')
+            sleep(0.5)
+            menu()
+        else:
+            valor = float(valor)
         print()
         produto: Product = Product(nome, valor)
 
@@ -75,12 +87,14 @@ def cadastrar_produto():
         print('DADOS DO PRODUTO: ')
         print('------------------')
         print()
+        print('----------------------------')
         print(produto)
+        print('----------------------------')
         produtos.append(produto)
         print()
         print('PRODUTO CADASTRADO COM SUCESSO!')
         print()
-        sleep(1)
+        sleep(0.5)
         menu()
 
     except (ValueError, TypeError, UnboundLocalError) as err:
