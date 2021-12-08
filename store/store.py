@@ -273,10 +273,11 @@ def fechar_pedido():
 
             data_compra = datetime.datetime.today()
             vencimento = datetime.timedelta(days=3)
-            boleto = vencimento + data_compra
+            dia_limite = vencimento + data_compra
+            formato_data_br = dia_limite.strftime('%d/%m/%Y')
             print(f'TOTAL DA FATURA: {float_to_str(fatura)}')
             print()
-            print(f'VENCIMENTO DO BOLETO: {boleto}')
+            print(f'VENCIMENTO DA FATURA: {formato_data_br}')
             print()
 
         else:
