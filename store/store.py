@@ -283,6 +283,7 @@ def fechar_pedido():
             print()
             print(f'VENCIMENTO DA FATURA: {formato_data_br}')
             print()
+            exit(1)
 
         else:
             print('CARRINHO VAZIO...')
@@ -294,7 +295,7 @@ def fechar_pedido():
 
 
 def rastrear_produto(numero):
-    """Dá a possibilidade de pegarmos o produto pelo seu código."""
+    """Função que dá a possibilidade de pegarmos o produto pelo seu código."""
     x: Product = None  # noqa
 
     if len(produtos) > 0:
