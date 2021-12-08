@@ -126,9 +126,9 @@ def comprar_produto():
     """Adiciona o produto (informando o seu código) no carrinho."""
     try:
         if len(produtos) > 0:
-            print('-------------------------------------------')
-            print('CÓDIGO DO PRODUTO QUE VOCÊ DESEJA COMPRAR: ')
-            print('-------------------------------------------')
+            print('----------------------------------------------------')
+            print('DIGITE O CÓDIGO DO PRODUTO QUE VOCÊ DESEJA COMPRAR: ')
+            print('----------------------------------------------------')
             print()
             for produto in produtos:
                 print('---------------------------')
@@ -136,7 +136,13 @@ def comprar_produto():
                 print('---------------------------')
                 print()
 
-            numero: int = int(input())
+            numero = input()
+            if numero == '' or not numero.isnumeric():
+                print('DIGITE O CÓDIGO DO PRODUTO!')
+                sleep(0.5)
+                menu()
+            else:
+                numero = int(numero)
 
             produto: Product = rastrear_produto(numero)
 
