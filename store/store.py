@@ -33,7 +33,7 @@ def menu():
         else:
             opcao = int(opcao)
             if opcao > 6:
-                print('APENAS NÚMEROS ENTRE 1 E 6.')
+                print('ESCOLHA APENAS AS OPÇÕES APRESENTADAS.')
                 menu()
 
         if opcao == 1:
