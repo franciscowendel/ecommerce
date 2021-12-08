@@ -48,11 +48,11 @@ def menu():
             fechar_pedido()
         elif opcao == 6:
             print('VOLTE SEMPRE!')
-            sleep(1)
+            sleep(0.5)
             exit(1)
         else:
             print('OPÇÃO INVÁLIDA...')
-            sleep(1)
+            sleep(0.5)
             menu()
 
     except (ValueError, TypeError) as err:
