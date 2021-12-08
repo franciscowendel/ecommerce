@@ -243,15 +243,15 @@ def fechar_pedido():
                 usuario: User = User(nome, email, senha)
             else:
                 print('SENHA INCORRETA!')
-                exit(1)
+                menu()
 
             print('USUÁRIO CRIADO COM SUCESSO!')
             print()
 
-            senha: str = input('DIGITE A SENHA NOVAMENTE: ')
+            senha_2: str = input('DIGITE A SENHA NOVAMENTE: ')
             print()
 
-            if usuario.password_check(senha):  # noqa
+            if usuario.password_check(senha_2):  # noqa
                 print('ACESSO PERMITIDO!')
             else:
                 print('ACESSO NEGADO, SENHA INCORRETA!')
