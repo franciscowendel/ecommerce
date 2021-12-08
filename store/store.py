@@ -222,17 +222,21 @@ def fechar_pedido():
             fatura: float = 0
 
             nome: str = input('NOME: ')
-            if nome == '':
-                exit(1)
+            if nome == '' or nome.isnumeric():
+                print('DIGITE O SEU NOME!')
+                menu()
             email: str = input('EMAIL: ')
-            if email == '':
-                exit(1)
+            if email == '' or email.isnumeric():
+                print('DIGITE SEU EMAIL!')
+                menu()
             senha: str = input('SENHA: ')
             if senha == '':
-                exit(1)
+                print('DIGITE SUA SENHA!')
+                menu()
             confirma_senha: str = input('CONFIRME A SENHA: ')
             if confirma_senha == '':
-                exit(1)
+                print('CONFIRME A SUA SENHA!')
+                menu()
             print()
 
             if senha == confirma_senha:
