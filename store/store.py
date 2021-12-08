@@ -224,18 +224,22 @@ def fechar_pedido():
             nome: str = input('NOME: ')
             if nome == '' or nome.isnumeric():
                 print('DIGITE O SEU NOME!')
+                print()
                 menu()
             email: str = input('EMAIL: ')
             if email == '' or email.isnumeric():
                 print('DIGITE SEU EMAIL!')
+                print()
                 menu()
             senha: str = input('SENHA: ')
             if senha == '':
                 print('DIGITE SUA SENHA!')
+                print()
                 menu()
             confirma_senha: str = input('CONFIRME A SENHA: ')
             if confirma_senha == '':
                 print('CONFIRME A SUA SENHA!')
+                print()
                 menu()
             print()
 
