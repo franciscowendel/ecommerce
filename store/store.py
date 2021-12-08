@@ -24,7 +24,17 @@ def menu():
         print('6 - SAIR: ')
         print()
 
-        opcao: int = int(input())
+        opcao = input()
+
+        if not opcao.isnumeric() or opcao == '':
+            print('ESCOLHA UMA OPÇÃO!')
+            print()
+            menu()
+        else:
+            opcao = int(opcao)
+            if opcao > 6:
+                print('APENAS NÚMEROS ENTRE 1 E 6.')
+                menu()
 
         if opcao == 1:
             cadastrar_produto()
