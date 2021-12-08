@@ -159,14 +159,14 @@ def comprar_produto():
                             print(f'PRODUTO {produto.nome} AGORA POSSUI {quant + 1} UNIDADES NO CARRINHO.')
                             exist: bool = True
                             print()
-                            sleep(1)
+                            sleep(0.5)
                             menu()
 
                     if not exist:
                         prod: Dict[Product, int] = {produto: 1}
                         carrinho.append(prod)
                         print(f'O PRODUTO {produto.nome} FOI ADICIONADO NO CARRINHO COM SUCESSO!')
-                        sleep(1)
+                        sleep(0.5)
                         menu()
 
                 else:
@@ -174,18 +174,18 @@ def comprar_produto():
                     carrinho.append(item)
                     print(f'O PRODUTO {produto.nome} FOI ADICIONADO NO CARRINHO COM SUCESSO!')
                     print()
-                    sleep(1)
+                    sleep(0.5)
                     menu()
 
             else:
                 print(f'PRODUTO COM CÓDIGO INFORMADO NÃO FOI ENCONTRADO.')
                 print()
-            sleep(1)
+            sleep(0.5)
             menu()
 
         else:
             print('NENHUM PRODUTO CADASTRADO...')
-        sleep(1)
+        sleep(0.5)
         menu()
 
     except (ValueError, TypeError, UnboundLocalError) as err:
