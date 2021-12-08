@@ -211,12 +211,12 @@ def ver_carrinho():
     else:
         print('CARRINHO VAZIO...')
         print()
-    sleep(1)
+    sleep(0.5)
     menu()
 
 
 def fechar_pedido():
-    """Após informar os dados de usuário, o pedido é fechado, informando o total da fatura e o vencimento do boleto."""
+    """Após informar os dados de usuário, o pedido é fechado informando o total da fatura e o vencimento do boleto."""
     try:
         if len(carrinho) > 0:
             fatura: float = 0
