@@ -281,7 +281,7 @@ def fechar_pedido():
 
         else:
             print('CARRINHO VAZIO...')
-        sleep(1)
+        sleep(0.5)
         menu()
 
     except (ValueError, TypeError, UnboundLocalError) as err:
