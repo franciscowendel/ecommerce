@@ -139,6 +139,7 @@ def comprar_produto():
             numero = input()
             if numero == '' or not numero.isnumeric():
                 print('DIGITE O CÓDIGO DO PRODUTO!')
+                print()
                 sleep(0.5)
                 menu()
             else:
