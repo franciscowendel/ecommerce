@@ -110,10 +110,11 @@ def listar_produtos():
         print('-------------------')
         print()
         for produto in produtos:
+
             print(produto)
-            print('-------------------')
+            print('--------------------------')
             print()
-            sleep(1)
+            sleep(0.5)
 
     else:
         print('NENHUM PRODUTO CADATRADO...')
