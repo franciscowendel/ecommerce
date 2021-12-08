@@ -60,7 +60,7 @@ def menu():
 
 
 def cadastrar_produto():
-    """Cadastra o produto e o adiciona na lista de produtos."""
+    """Cadastra o produto e adiciona-o na lista de produtos."""
     try:
         print('-------------------')
         print('CADASTRAR PRODUTO: ')
