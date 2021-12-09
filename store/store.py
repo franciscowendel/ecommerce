@@ -73,7 +73,7 @@ def cadastrar_produto():
             sleep(0.5)
             menu()
         valor = input('VALOR DO PRODUTO: ')
-        if valor == '':
+        if valor == '' or not valor.isnumeric():
             print()
             print('DIGITE O VALOR DO PRODUTO!')
             sleep(0.5)
