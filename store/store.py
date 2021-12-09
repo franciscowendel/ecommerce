@@ -253,12 +253,21 @@ def fechar_pedido():
             print()
 
             senha_2: str = input('DIGITE A SENHA NOVAMENTE: ')
-            print()
+            if senha_2 == '':
+                print()
+                print('CONFIRME A SENHA NOVAMENTE!')
+                print()
+                sleep(0.5)
+                menu()
 
-            if usuario.password_check(senha_2):  # noqa
+            if usuario.password_check(senha_2): # noqa
+                print()
                 print('ACESSO PERMITIDO!')
+                print()
             else:
+                print()
                 print('ACESSO NEGADO, SENHA INCORRETA!')
+                print()
 
             print()
 
