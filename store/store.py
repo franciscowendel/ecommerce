@@ -80,6 +80,13 @@ def cadastrar_produto():
             menu()
         else:
             valor = float(valor)
+            if valor < 1:
+                print()
+                print('APENAS VALORES MAIORES QUE 1!')
+                print()
+                sleep(0.5)
+                menu()
+                
         print()
         produto: Product = Product(nome, valor)
 
