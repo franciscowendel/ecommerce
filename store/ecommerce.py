@@ -88,7 +88,7 @@ def register_product():
             print("Type the product's price")
             print()
             sleep(0.5)
-            menu()
+            store()
         else:
             price = float(price)
             if price < 1:
@@ -137,100 +137,109 @@ def list_products():
     else:
         print('Zero registered products...')
     sleep(0.5)
-    menu()
+    store()
 
 
-def comprar_produto():
-    """Adiciona o produto (informando o seu código) no carrinho."""
+def buy_product():
+    """Adds a product -- by giving its code! --, to the cart."""
     try:
-        if len(produtos) > 0:
-            print('----------------------------------------------------')
-            print('DIGITE O CÓDIGO DO PRODUTO QUE VOCÊ DESEJA COMPRAR: ')
-            print('----------------------------------------------------')
+        if len(products) > 0:
+            print('-------------------------------------------------')
+            print("Type the product's code that you want to buy it: ")
+            print('-------------------------------------------------')
             print()
-            for produto in produtos:
+            for product in products:
                 print('---------------------------')
-                print(produto)
+                print(product)
                 print('---------------------------')
                 print()
 
-            numero = input()
-            if numero == '' or not numero.isnumeric():
-                print('DIGITE O CÓDIGO DO PRODUTO!')
+            code = input()
+            if code == '' or not code.isnumeric():
+                print()
+                print("Type the product's code!")
                 print()
                 sleep(0.5)
-                menu()
+                store()
             else:
-                numero = int(numero)
+                code = int(code)
 
-            produto: Product = rastrear_produto(numero)
+            product = get_product_by_code(code)
 
-            if produto:
-                if len(carrinho) > 0:
+            if product:
+                if len(cart) > 0:
                     exist: bool = False
 
-                    for item in carrinho:
-                        quant: int = item.get(produto)
+                    for item in cart:
+                        quantity: int = item.get(product)
 
-                        if quant:
-                            item[produto] = quant + 1
-                            print(f'PRODUTO {produto.nome} AGORA POSSUI {quant + 1} UNIDADES NO CARRINHO.')
-                            exist: bool = True
+                        if quantity:
+                            item[product] = quantity + 1
                             print()
+                            print(f'Product {produto.name} now has {quantity + 1} units in the cart.')
+                            print()
+                            exist: bool = True
                             sleep(0.5)
-                            menu()
+                            store()
 
                     if not exist:
-                        prod: Dict[Product, int] = {produto: 1}
-                        carrinho.append(prod)
-                        print(f'O PRODUTO {produto.nome} FOI ADICIONADO NO CARRINHO COM SUCESSO!')
+                        prod: Dict[Product, int] = {product: 1}
+                        cart.append(prod)
+                        print()
+                        print(f'The product {produto.name} has been added to the cart successfully!')
+                        print()
                         sleep(0.5)
-                        menu()
+                        store()
 
                 else:
-                    item: Dict[Product, int] = {produto: 1}
-                    carrinho.append(item)
-                    print(f'O PRODUTO {produto.nome} FOI ADICIONADO NO CARRINHO COM SUCESSO!')
+                    item: Dict[Product, int] = {product: 1}
+                    cart.append(item)
+                    print()
+                    print(f'The product {produto.name} has been added to the cart successfully!')
                     print()
                     sleep(0.5)
-                    menu()
+                    store()
 
             else:
-                print(f'PRODUTO COM CÓDIGO INFORMADO NÃO FOI ENCONTRADO.')
+                print()
+                print(f"This product does not exist.")
                 print()
             sleep(0.5)
-            menu()
+            store()
 
         else:
-            print('NENHUM PRODUTO CADASTRADO...')
+            print()
+            print('Zero registered products...')
+            print()
         sleep(0.5)
-        menu()
+        store()
 
-    except (ValueError, TypeError, UnboundLocalError) as err:
-        return f'Erros do tipo {err} encontrados...'
+    except (ValueError, TypeError) as err:
+        return f'Errors {err} found...'
 
 
-def ver_carrinho():
-    """Lista os produtos no carrinho."""
-    if len(carrinho) > 0:
+def see_cart():
+    """Lists all the products in the cart."""
+    if len(cart) > 0:
 
-        print('----------')
-        print('CARRINHO: ')
-        print('----------')
+        print('------')
+        print('Cart: ')
+        print('------')
         print()
-        for item in carrinho:
-            for dados in item.items():
+        for item in cart:
+            for data in item.items():
                 print('-------------------')
-                print(dados[0])
-                print(f'Quantidade: {dados[1]}')
+                print(data[0])
+                print(f'Quantity: {data[1]}')
                 print('-------------------')
                 print()
 
     else:
-        print('CARRINHO VAZIO...')
+        print()
+        print('Empty cart...')
         print()
     sleep(0.5)
-    menu()
+    store()
 
 
 def fechar_pedido():
@@ -319,14 +328,14 @@ def fechar_pedido():
         return f'Erros do tipo {err} encontrados...'
 
 
-def rastrear_produto(numero):
-    """Função que dá a possibilidade de pegarmos o produto pelo seu código."""
+def get_product_by_code(code):
+    """Function made to get the right product in the function 'buy_product'. """
     x: Product = None  # noqa
 
-    if len(produtos) > 0:
-        for produto in produtos:
-            if produto.codigo == numero:
-                x: Product = produto
+    if len(products) > 0:
+        for product in products:
+            if product.code == code:
+                x = product
     return x
 
 
