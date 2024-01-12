@@ -313,9 +313,9 @@ def close_order():
 
             print()
 
-            print('------')
-            print('Cart: ')
-            print('------')
+            print('-----------')
+            print('Your cart: ')
+            print('-----------')
             print()
             for item in cart:
                 for data in item.items():
