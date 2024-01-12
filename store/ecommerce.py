@@ -74,7 +74,7 @@ def register_product():
         print('Register product: ')
         print('-------------------')
         print()
-        name: str = input('NAME: ')
+        name: str = input('Name: ')
         if name == '' or name.isnumeric():
             print()
             print("Type the product's name!")
