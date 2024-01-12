@@ -31,7 +31,7 @@ def store():
             print('Choose an option!')
             print()
             sleep(0.5)
-            menu()
+            store()
         else:
             option = int(option)
             if option > 6:
@@ -39,7 +39,7 @@ def store():
                 print('Type one of the options that were given.')
                 print()
                 sleep(0.5)
-                menu()
+                store()
 
         if option == 1:
             register_product()
@@ -61,59 +61,62 @@ def store():
             print('Invalid option...')
             print()
             sleep(0.5)
-            menu()
+            store()
 
     except (ValueError, TypeError) as err:
         return f'Errors {err} found...'
 
 
-def cadastrar_produto():
-    """Cadastra o produto e adiciona-o na lista de produtos."""
+def register_product():
+    """Registers a product and place it in the product list."""
     try:
         print('-------------------')
-        print('CADASTRAR PRODUTO: ')
+        print('Register product: ')
         print('-------------------')
         print()
-        nome: str = input('NOME DO PRODUTO: ')
-        if nome == '' or nome.isnumeric():
+        name: str = input('NAME: ')
+        if name == '' or name.isnumeric():
             print()
-            print('DIGITE O NOME DO PRODUTO!')
+            print("Type the product's name!")
+            print()
             sleep(0.5)
-            menu()
-        valor = input('VALOR DO PRODUTO: ')
-        if valor == '' or not valor.isnumeric():
+            store()
+            
+        price = input('Price: ')
+        if price == '' or not price.isnumeric():
             print()
-            print('DIGITE O VALOR DO PRODUTO!')
+            print("Type the product's price")
+            print()
             sleep(0.5)
             menu()
         else:
-            valor = float(valor)
-            if valor < 1:
+            price = float(price)
+            if price < 1:
                 print()
-                print('APENAS VALORES MAIORES QUE 1!')
+                print('Only positive prices!')
                 print()
                 sleep(0.5)
-                menu()
+                store()
                 
         print()
-        produto: Product = Product(nome, valor)
+        product: Product = Product(name, price)
 
-        print('------------------')
-        print('DADOS DO PRODUTO: ')
-        print('------------------')
+        print('----------------')
+        print("Product's info: ")
+        print('----------------')
         print()
         print('----------------------------')
-        print(produto)
+        print(product)
         print('----------------------------')
-        produtos.append(produto)
+        products.append(product)
         print()
-        print('PRODUTO CADASTRADO COM SUCESSO!')
+        print('Product registered successfully!')
         print()
         sleep(0.5)
-        menu()
+        store()
 
-    except (ValueError, TypeError, UnboundLocalError) as err:
-        return f'Erros do tipo {err} encontrados...'
+    except (ValueError, TypeError) as err:
+        return f'Errors {err} found...'
 
 
 def listar_produtos():
