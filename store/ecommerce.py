@@ -176,7 +176,7 @@ def buy_product():
                         if quantity:
                             item[product] = quantity + 1
                             print()
-                            print(f'Product {produto.name} now has {quantity + 1} units in the cart.')
+                            print(f'Product {product.name} now has {quantity + 1} units in the cart.')
                             print()
                             exist: bool = True
                             sleep(0.5)
@@ -186,7 +186,7 @@ def buy_product():
                         prod: Dict[Product, int] = {product: 1}
                         cart.append(prod)
                         print()
-                        print(f'The product {produto.name} has been added to the cart successfully!')
+                        print(f'The product {product.name} has been added to the cart successfully!')
                         print()
                         sleep(0.5)
                         store()
@@ -195,7 +195,7 @@ def buy_product():
                     item: Dict[Product, int] = {product: 1}
                     cart.append(item)
                     print()
-                    print(f'The product {produto.name} has been added to the cart successfully!')
+                    print(f'The product {product.name} has been added to the cart successfully!')
                     print()
                     sleep(0.5)
                     store()
@@ -243,89 +243,106 @@ def see_cart():
 
 
 def fechar_pedido():
-    """Após informar os dados de usuário, o pedido é fechado informando o total da fatura e o vencimento do boleto."""
+    """Requests the user's data and gives the invoice total and the payment date."""
     try:
-        if len(carrinho) > 0:
-            fatura: float = 0
+        if len(cart) > 0:
+            invoice: float = 0
 
-            nome: str = input('NOME: ')
-            if nome == '' or nome.isnumeric():
-                print('DIGITE O SEU NOME!')
+            name: str = input('Name: ')
+            if name == '' or name.isnumeric():
                 print()
-                menu()
-            email: str = input('EMAIL: ')
-            if email == '' or email.isnumeric():
-                print('DIGITE SEU EMAIL!')
-                print()
-                menu()
-            senha: str = input('SENHA: ')
-            if senha == '':
-                print('DIGITE SUA SENHA!')
-                print()
-                menu()
-            confirma_senha: str = input('CONFIRME A SENHA: ')
-            if confirma_senha == '':
-                print('CONFIRME A SUA SENHA!')
-                print()
-                menu()
-            print()
-
-            if senha == confirma_senha:
-                usuario: User = User(nome, email, senha)
-            else:
-                print('SENHA INCORRETA!')
-                menu()
-
-            print('USUÁRIO CRIADO COM SUCESSO!')
-            print()
-
-            senha_2: str = input('DIGITE A SENHA NOVAMENTE: ')
-            if senha_2 == '':
-                print()
-                print('CONFIRME A SENHA NOVAMENTE!')
+                print('Type your name!')
                 print()
                 sleep(0.5)
-                menu()
-
-            if usuario.password_check(senha_2): # noqa
+                store()
+                
+            email: str = input('Email: ')
+            if email == '' or email.isnumeric():
                 print()
-                print('ACESSO PERMITIDO!')
+                print('Type your email!')
+                print()
+                sleep(0.5)
+                store()
+                
+            password: str = input('Password: ')
+            if senha == '':
+                print()
+                print('Type your password!')
+                print()
+                sleep(0.5)
+                store()
+                
+            confirm_password: str = input('Confirm password: ')
+            if confirm_password == '':
+                print()
+                print('CONFIRME A SUA SENHA!')
+                print()
+                sleep(0.5)
+                store()
+                
+            print()
+
+            if password == confirm_password:
+                user: User = User(name, email, password)
+            else:
+                print()
+                print('Incorrect password!')
+                menu()
+                sleep(0.5)
+                store()
+
+            print('User created successfully!')
+            print()
+
+            password_2: str = input('Type your password again: ')
+            if password_2 == '':
+                print()
+                print('Type the password again!')
+                print()
+                sleep(0.5)
+                store()
+
+            if user._password_check(password_2): # noqa
+                print()
+                print('Access granted!')
                 print()
             else:
                 print()
-                print('ACESSO NEGADO, SENHA INCORRETA!')
+                print('Acess denied!')
                 print()
 
             print()
 
-            print('----------------------')
-            print('PRODUTOS NO CARRINHO: ')
-            print('----------------------')
+            print('------')
+            print('Cart: ')
+            print('------')
             print()
-            for item in carrinho:
-                for dados in item.items():
+            for item in cart:
+                for data in item.items():
                     print('-------------------')
-                    print(dados[0])
-                    print(f'Quantidade: {dados[1]}')
-                    fatura += dados[0].valor * dados[1]
+                    print(data[0])
+                    print(f'Quantity: {data[1]}')
+                    invoice += data[0].price * data[1]
                     print('-------------------')
                     print()
 
-            data_compra = datetime.datetime.today()
-            vencimento = datetime.timedelta(days=3)
-            dia_limite = vencimento + data_compra
-            formato_data_br = dia_limite.strftime('%d/%m/%Y')
-            print(f'TOTAL DA FATURA: {float_to_str(fatura)}\nVENCIMENTO DA FATURA: {formato_data_br}')
+            date_of_purchase = datetime.datetime.today()
+            days_to_pay = datetime.timedelta(days=3)
+            day_to_pay = date_of_purchase + days_to_pay
+            format_data_br = day_to_pay.strftime('%d/%m/%Y')
+            print(f'Total invoice: {float_to_str(invoice)}\nDay to pay: {format_data_br}')
             print()
             exit(1)
 
         else:
-            print('CARRINHO VAZIO...')
+            print()
+            print('Empty cart...')
+            print()
         sleep(0.5)
         menu()
 
-    except (ValueError, TypeError, UnboundLocalError) as err:
-        return f'Erros do tipo {err} encontrados...'
+    except (ValueError, TypeError) as err:
+        return f'Errors {err} found...'
 
 
 def get_product_by_code(code):
