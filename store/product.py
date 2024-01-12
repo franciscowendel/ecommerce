@@ -1,4 +1,4 @@
-from aux import float_to_str
+from auxiliary import float_to_str
 
 
 class Product:
