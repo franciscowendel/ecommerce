@@ -3,25 +3,25 @@ from time import sleep
 from product import Product
 from userverify import User
 import datetime
-from aux import float_to_str
+from auxiliary import float_to_str
 
-produtos: List[Product] = []
-carrinho: List[Dict[Product, int]] = []
+products: List[Product] = []
+cart: List[Dict[Product, int]] = []
 
 
-def menu():
-    """Mostra as opções do que pode ser feito para o usuário."""
+def store():
+    """Shows the options that the user can choose."""
     try:
         print('-------------------------------------------------------------------------------------------------------')
         print('---------------------------------------------- STORE --------------------------------------------------')
         print('-------------------------------------------------------------------------------------------------------')
         print()
-        print('1 - CADASTRAR PRODUTO: ')
-        print('2 - LISTAR PRODUTOS: ')
-        print('3 - COMPRAR PRODUTO: ')
-        print('4 - VER CARRINHO: ')
-        print('5 - FECHAR PEDIDO: ')
-        print('6 - SAIR: ')
+        print('1 - Register product: ')
+        print('2 - List products: ')
+        print('3 - Buy product: ')
+        print('4 - Cart: ')
+        print('5 - Close order: ')
+        print('6 - Quit: ')
         print()
 
         opcao = input()
@@ -320,4 +320,4 @@ def rastrear_produto(numero):
 
 
 if __name__ == '__main__':
-    menu()
+    store()
