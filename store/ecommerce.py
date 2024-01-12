@@ -14,7 +14,7 @@ cart: List[Dict[Product, int]] = []
 
 
 def store():
-    """Shows the options that the user can choose."""
+    """Shows the options the user can choose."""
     try:
         print('-------------------------------------------------------------------------------------------------------')
         print('---------------------------------------------- STORE --------------------------------------------------')
