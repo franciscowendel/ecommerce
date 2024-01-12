@@ -24,39 +24,47 @@ def store():
         print('6 - Quit: ')
         print()
 
-        opcao = input()
+        option = input()
 
-        if not opcao.isnumeric() or opcao == '':
-            print('ESCOLHA UMA OPÇÃO!')
+        if not option.isnumeric() or option == '':
             print()
+            print('Choose an option!')
+            print()
+            sleep(0.5)
             menu()
         else:
-            opcao = int(opcao)
-            if opcao > 6:
-                print('ESCOLHA APENAS AS OPÇÕES APRESENTADAS.')
+            option = int(option)
+            if option > 6:
+                print()
+                print('Type one of the options that were given.')
+                print()
+                sleep(0.5)
                 menu()
 
-        if opcao == 1:
-            cadastrar_produto()
-        elif opcao == 2:
-            listar_produtos()
-        elif opcao == 3:
-            comprar_produto()
-        elif opcao == 4:
-            ver_carrinho()
-        elif opcao == 5:
-            fechar_pedido()
-        elif opcao == 6:
-            print('VOLTE SEMPRE!')
+        if option == 1:
+            register_product()
+        elif option == 2:
+            list_products()
+        elif option == 3:
+            buy_product()
+        elif option == 4:
+            see_cart()
+        elif option == 5:
+            close_order()
+        elif option == 6:
+            print()
+            print('...')
             sleep(0.5)
             exit(1)
         else:
-            print('OPÇÃO INVÁLIDA...')
+            print()
+            print('Invalid option...')
+            print()
             sleep(0.5)
             menu()
 
-    except (ValueError, TypeError, UnboundLocalError) as err:
-        return f'Erros do tipo {err} encontrados...'
+    except (ValueError, TypeError) as err:
+        return f'Errors {err} found...'
 
 
 def cadastrar_produto():
