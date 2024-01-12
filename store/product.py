@@ -3,25 +3,25 @@ from aux import float_to_str
 
 class Product:
 
-    numero: int = 1
+    number: int = 1
 
-    def __init__(self, nome: str, valor: float) -> None:
-        self.__codigo = Product.contador
-        self.__nome: str = nome
-        self.__valor: float = valor
+    def __init__(self, name: str, price: float) -> None:
+        self.__code = Product.contador
+        self.__name: str = name
+        self.__price: float = price
         Product.numero += 1
 
     @property
-    def codigo(self) -> int:
-        return self.__codigo
+    def code(self) -> int:
+        return self.__code
 
     @property
-    def nome(self) -> str:
-        return self.__nome
+    def name(self) -> str:
+        return self.__name
 
     @property
-    def valor(self) -> float:
-        return self.__valor
+    def price(self) -> float:
+        return self.__price
 
     def __str__(self):
-        return f'Código do produto: {self.codigo}\nNome do produto: {self.nome}\nValor do produto: {float_to_str(self.valor)}'  # noqa
+        return f"Product's code: {self.codigo}\nProduct's name: {self.nome}\nProduct's price: {float_to_str(self.price)}"  # noqa
