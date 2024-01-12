@@ -1,11 +1,11 @@
-# simple ecommerce
+# Simple Ecommerce
 A *simple ecommerce* where the user can: 
-1 - __Register product__; 
-2 - __List Products__; 
-3 - __Buy product__; 
-4 - __View cart__; 
-5 - __Close order__ __(after registration)__; 
-6 - __Leave__.
+__1__ - __Register product__; 
+__2__ - __List Products__; 
+__3__ - __Buy product__; 
+__4___ - __View cart__; 
+__5__ - __Close order__ __(after registration)__; 
+__6__ - __Leave__.
 
 Install dependencies:
 ```console
