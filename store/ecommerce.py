@@ -242,7 +242,7 @@ def see_cart():
     store()
 
 
-def fechar_pedido():
+def close_order():
     """Requests the user's data and gives the invoice total and the payment date."""
     try:
         if len(cart) > 0:
@@ -265,7 +265,7 @@ def fechar_pedido():
                 store()
                 
             password: str = input('Password: ')
-            if senha == '':
+            if password == '':
                 print()
                 print('Type your password!')
                 print()
@@ -287,7 +287,7 @@ def fechar_pedido():
             else:
                 print()
                 print('Incorrect password!')
-                menu()
+                print()
                 sleep(0.5)
                 store()
 
@@ -339,7 +339,7 @@ def fechar_pedido():
             print('Empty cart...')
             print()
         sleep(0.5)
-        menu()
+        store()
 
     except (ValueError, TypeError) as err:
         return f'Errors {err} found...'
