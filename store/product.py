@@ -6,10 +6,10 @@ class Product:
     number: int = 1
 
     def __init__(self, name: str, price: float) -> None:
-        self.__code = Product.contador
+        self.__code = Product.number
         self.__name: str = name
         self.__price: float = price
-        Product.numero += 1
+        Product.number += 1
 
     @property
     def code(self) -> int:
