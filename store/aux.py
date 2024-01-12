@@ -1,2 +1,3 @@
-def float_to_str(valor) -> str:
-    return f'R$ {valor:,.2f}'
+def float_to_str(value) -> str:
+    """Transforms a float value in string."""
+    return f'R$ {value:,.2f}'
