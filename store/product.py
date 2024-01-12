@@ -24,4 +24,4 @@ class Product:
         return self.__price
 
     def __str__(self):
-        return f"Product's code: {self.codigo}\nProduct's name: {self.nome}\nProduct's price: {float_to_str(self.price)}"  # noqa
+        return f"Product's code: {self.code}\nProduct's name: {self.nome}\nProduct's price: {float_to_str(self.price)}"  # noqa
