@@ -119,23 +119,23 @@ def register_product():
         return f'Errors {err} found...'
 
 
-def listar_produtos():
-    """Lista os produtos cadastrados na lista de produtos."""
-    if len(produtos) > 0:
+def list_products():
+    """Lists all the registered products."""
+    if len(products) > 0:
 
-        print('-------------------')
-        print('LISTA DE PRODUTOS: ')
-        print('-------------------')
+        print('----------------')
+        print("Product's list: ")
+        print('----------------')
         print()
-        for produto in produtos:
+        for product in products:
             print('--------------------------')
-            print(produto)
+            print(product)
             print('--------------------------')
             print()
             sleep(0.5)
 
     else:
-        print('NENHUM PRODUTO CADATRADO...')
+        print('Zero registered products...')
     sleep(0.5)
     menu()
 
