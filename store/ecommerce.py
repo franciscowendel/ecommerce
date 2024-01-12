@@ -139,7 +139,9 @@ def list_products():
             sleep(0.5)
 
     else:
+        print()
         print('Zero registered products...')
+        print()
     sleep(0.5)
     store()
 
