@@ -1,4 +1,8 @@
-from typing import List, Dict
+from typing import (
+    List, 
+    Dict
+)
+
 from time import sleep
 from product import Product
 from userverify import User
